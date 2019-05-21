@@ -1,5 +1,6 @@
 package android.example.weatherbypauli.Data.db
 
+import android.example.weatherbypauli.Data.db.entity.Forecast
 import android.example.weatherbypauli.Data.db.entity.Forecastday
 import android.example.weatherbypauli.Data.db.unitlocalized.ImperialSimpleFutureEntry
 import android.example.weatherbypauli.Data.db.unitlocalized.MetricSimpleFutureEntry
@@ -21,13 +22,7 @@ interface FutureWeatherDao {
     @Query("select * from future_weather where date(date) >= date(:startDate)")
     fun getSimpleWeatherForecastsImperial(startDate: LocalDate): LiveData<List<ImperialSimpleFutureEntry>>
 
-  //  @Query("select * from future_weather where date(date) = date(:date)")
-   // fun getDetailedWeatherByDateMetric(date: LocalDate): LiveData<MetricDetailFutureWeatherEntry>
-
-  //  @Query("select * from future_weather where date(date) = date(:date)")
-  //  fun getDetailedWeatherByDateImperial(date: LocalDate): LiveData<ImperialDetailFutureWeatherEntry>
-
-    @Query("select count(id) from future_weather where date(date) >= date(:startDate)")
+   @Query("select count(id) from future_weather where date(date) >= date(:startDate)")
     fun countFutureWeather(startDate: LocalDate): Int
 
     @Query("delete from future_weather where date(date) < date(:firstDateToKeep)")

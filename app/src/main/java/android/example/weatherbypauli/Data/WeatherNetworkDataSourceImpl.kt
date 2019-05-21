@@ -13,9 +13,12 @@ const val FORECAST_DAYS_COUNT = 1
 class WeatherNetworkDataSourceImpl(
     private val apixuWeatherApiService: ApixuWeatherApiService
 ) : WeatherNetworkDataSource {
+
     private val _downloadedCurrentWeather = MutableLiveData<CurrentWeatherResponse>()
     override val downloadCurrentWeather: LiveData<CurrentWeatherResponse>
         get() = _downloadedCurrentWeather
+
+
     override suspend fun fetchCurrentWeather(location: String, languageCode: String) {
         try {
             val fetchedCurrentWeather = apixuWeatherApiService
@@ -27,6 +30,7 @@ class WeatherNetworkDataSourceImpl(
             Log.e("Connectivity", "No connection")
         }
     }
+
     private val _downloadedFutureWeather = MutableLiveData<FutureWeatherResponse>()
     override val downloadedFutureWeather: LiveData<FutureWeatherResponse>
         get() = _downloadedFutureWeather

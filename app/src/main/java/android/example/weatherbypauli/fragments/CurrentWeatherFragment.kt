@@ -68,7 +68,7 @@ private fun bindUI()  = launch{
  })
 }
     private fun chooseLocalizedUnitAbbreviation(metric: String, imperial: String) : String{
-        return if (viewModel.isMetric) metric else imperial
+        return if (viewModel.isMetricUnit) metric else imperial
     }
 
     // Make the actionbar display the location as the title of the action bar

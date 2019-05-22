@@ -85,6 +85,5 @@ class FutureListWeatherFragment : ScopedFragment(), KodeinAware {
             layoutManager = LinearLayoutManager(this@FutureListWeatherFragment.context)
             adapter = groupAdapter
         }
-
     }
 }

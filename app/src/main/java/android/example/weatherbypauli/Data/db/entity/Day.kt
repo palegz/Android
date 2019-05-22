@@ -13,7 +13,7 @@ data class Day(
     @SerializedName("avgvis_km")
     val avgvisKm: Double,
     @SerializedName("avgvis_miles")
-    val avgvisMiles: Int,
+    val avgvisMiles: Double,
     @SerializedName("maxtemp_c")
     val maxtempC: Double,
     @SerializedName("maxtemp_f")
@@ -29,8 +29,8 @@ data class Day(
     @SerializedName("mintemp_f")
     val mintempF: Double,
     @SerializedName("totalprecip_in")
-    val totalprecipIn: Int,
+    val totalprecipIn: Double,
     @SerializedName("totalprecip_mm")
-    val totalprecipMm: Int,
+    val totalprecipMm: Double,
     val uv: Double
 )

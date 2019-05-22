@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-const val FORECAST_DAYS_COUNT = 1
+const val FORECAST_DAYS_COUNT = 7
 
 
 class WeatherNetworkDataSourceImpl(
